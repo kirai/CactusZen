@@ -1,0 +1,97 @@
+"--------------------------------------------------------------------"
+"Counting each time a word from items appears at text (the total sum)"
+"--------------------------------------------------------------------"
+Start Benchmarking with GC
+ Finished Benchmarks... 100 % Showing results from best to worst
+
+scan, Chris
+Time: 5.8860 ns Result: 5
+
+scan with block, Chris
+Time: 6.3312 ns Result: 5
+
+Chris Regex in split based solution
+Time: 6.9924 ns Result: 5
+
+Hector inject solution
+Time: 8.3708 ns Result: 5
+
+Carlos Collect solution
+Time: 8.6130 ns Result: 5
+
+Chris Regex based solution
+Time: 8.8846 ns Result: 5
+
+Carlos find_all solution
+Time: 8.9503 ns Result: 5
+
+GSUB replace, quite slow,  Chris
+Time: 24.8077 ns Result: 5
+
+Start Benchmarking without GC
+ Finished Benchmarks... 100 % Showing results from best to worst
+
+scan, Chris
+Time: 6.0811 ns Result: 5
+
+Chris Regex in split based solution
+Time: 6.5441 ns Result: 5
+
+scan with block, Chris
+Time: 6.6295 ns Result: 5
+
+Carlos Collect solution
+Time: 8.0368 ns Result: 5
+
+Chris Regex based solution
+Time: 8.5189 ns Result: 5
+
+Hector inject solution
+Time: 8.6059 ns Result: 5
+
+Carlos find_all solution
+Time: 8.8789 ns Result: 5
+
+GSUB replace, quite slow,  Chris
+Time: 24.3218 ns Result: 5
+
+"-----------------------------------------------------------"
+"Keeping a count of the appearances of each word in the text"
+"-----------------------------------------------------------"
+Start Benchmarking with GC
+ Finished Benchmarks... 100 % Showing results from best to worst
+
+has_key with each, Chris's solution, init hash with {}
+Time: 10.7301 ns Result: {"carlos"=>2, "test"=>1, "1"=>1, "chris"=>2, "ojete"=>2, "cads"=>1, "moreno"=>1, "hector"=>1}
+
+has_key with each, Chris's solution, init hash with Hash.new
+Time: 11.2349 ns Result: {"carlos"=>2, "test"=>1, "1"=>1, "chris"=>2, "ojete"=>2, "cads"=>1, "moreno"=>1, "hector"=>1}
+
+Using inject Carlos solution
+Time: 12.9376 ns Result: {"carlos"=>2, "test"=>1, "1"=>1, "chris"=>2, "ojete"=>2, "cads"=>1, "moreno"=>1, "hector"=>1}
+
+Using inject Chris solution using boolean || instead of .has_key?
+Time: 14.8677 ns Result: {"carlos"=>2, "test"=>1, "1"=>1, "chris"=>2, "ojete"=>2, "cads"=>1, "moreno"=>1, "hector"=>1}
+
+Using group by and collect
+Time: 18.7553 ns Result: {"carlos"=>2, "test"=>1, "1"=>1, "chris"=>2, "ojete"=>2, "cads"=>1, "moreno"=>1, "hector"=>1}
+
+Start Benchmarking without GC
+ Finished Benchmarks... 100 % Showing results from best to worst
+
+has_key with each, Chris's solution, init hash with {}
+Time: 11.0168 ns Result: {"carlos"=>2, "test"=>1, "1"=>1, "chris"=>2, "ojete"=>2, "cads"=>1, "moreno"=>1, "hector"=>1}
+
+Using inject Carlos solution
+Time: 11.6958 ns Result: {"carlos"=>2, "test"=>1, "1"=>1, "chris"=>2, "ojete"=>2, "cads"=>1, "moreno"=>1, "hector"=>1}
+
+has_key with each, Chris's solution, init hash with Hash.new
+Time: 12.6499 ns Result: {"carlos"=>2, "test"=>1, "1"=>1, "chris"=>2, "ojete"=>2, "cads"=>1, "moreno"=>1, "hector"=>1}
+
+Using inject Chris solution using boolean || instead of .has_key?
+Time: 13.2640 ns Result: {"carlos"=>2, "test"=>1, "1"=>1, "chris"=>2, "ojete"=>2, "cads"=>1, "moreno"=>1, "hector"=>1}
+
+Using group by and collect
+Time: 14.4619 ns Result: {"carlos"=>2, "test"=>1, "1"=>1, "chris"=>2, "ojete"=>2, "cads"=>1, "moreno"=>1, "hector"=>1}
+
+
