@@ -1,0 +1,207 @@
+chris@fruwe~/src/me/CactusZen ruby may2.rb 
+ruby 1.8.7 (2011-12-28 MBARI 8/0x6770 on patchlevel 357) [i686-darwin11.3.0], MBARI 0x6770, Ruby Enterprise Edition 2012.01
+--------------------------------------------------------------------
+Counting each time a word from items appears at text (the total sum)
+--------------------------------------------------------------------
+****************************************************************************************************
+ Start Benchmarking with GC
+ Finished Benchmarks... 100 % Showing results from best to worst
+
+ Expected result: 5
+
+Time: 8.1063 ns  Title: scan, Chris  Memory: GC= mem incr=
+Time: 9.5786 ns  Title: Chris each solution  Memory: GC= mem incr=
+Time: 9.8767 ns  Title: Chris Regex in split based solution  Memory: GC= mem incr=
+Time: 10.0249 ns  Title: Carlos Collect solution  Memory: GC= mem incr=
+Time: 11.1402 ns  Title: Carlos find_all solution  Memory: GC= mem incr=
+Time: 12.3086 ns  Title: scan with block, Chris  Memory: GC= mem incr=
+Time: 13.8883 ns  Title: Chris Regex based solution  Memory: GC= mem incr=
+Time: 14.0976 ns  Title: Chris each solution with items - text loop  Memory: GC= mem incr=
+Time: 14.6831 ns  Title: Hector inject solution  Memory: GC= mem incr=
+Time: 17.0581 ns  Title: Chris - Using 'group by and collect' from the next benchmark  Memory: GC= mem incr=
+Time: 17.7920 ns  Title: Chris each solution with text - items loop  Memory: GC= mem incr=
+Time: 19.3503 ns  Title: inverse GSUB replace, amazingly quick for large data sets,  Chris  Memory: GC= mem incr=
+Time: 34.1380 ns  Title: GSUB replace, quite slow,  Chris  Memory: GC= mem incr=
+Time: 254.8344 ns  Title: I don't know ruby, just C, the WTF, I am WTF programmer and try it the stupid way, Chris  Memory: GC= mem incr=
+****************************************************************************************************
+ Start Benchmarking without GC
+ Finished Benchmarks... 100 % Showing results from best to worst
+
+ Expected result: 5
+
+Time: 6.8339 ns  Title: scan, Chris  Memory: GC= mem incr=
+Time: 8.3640 ns  Title: Chris each solution  Memory: GC= mem incr=
+Time: 8.5699 ns  Title: Carlos Collect solution  Memory: GC= mem incr=
+Time: 9.1149 ns  Title: Chris Regex in split based solution  Memory: GC= mem incr=
+Time: 10.0437 ns  Title: scan with block, Chris  Memory: GC= mem incr=
+Time: 10.1026 ns  Title: Carlos find_all solution  Memory: GC= mem incr=
+Time: 11.3300 ns  Title: Chris Regex based solution  Memory: GC= mem incr=
+Time: 11.9163 ns  Title: Hector inject solution  Memory: GC= mem incr=
+Time: 13.0709 ns  Title: Chris each solution with items - text loop  Memory: GC= mem incr=
+Time: 13.9255 ns  Title: Chris - Using 'group by and collect' from the next benchmark  Memory: GC= mem incr=
+Time: 16.1069 ns  Title: Chris each solution with text - items loop  Memory: GC= mem incr=
+Time: 16.7117 ns  Title: inverse GSUB replace, amazingly quick for large data sets,  Chris  Memory: GC= mem incr=
+Time: 33.5376 ns  Title: GSUB replace, quite slow,  Chris  Memory: GC= mem incr=
+Time: 225.7831 ns  Title: I don't know ruby, just C, the WTF, I am WTF programmer and try it the stupid way, Chris  Memory: GC= mem incr=
+-----------------------------------------------------------
+Try the same with more text
+-----------------------------------------------------------
+****************************************************************************************************
+ Start Benchmarking with GC
+ Finished Benchmarks... 100 % Showing results from best to worst
+
+ Expected result: 5000
+
+Time: 2378.5210 ns  Title: inverse GSUB replace, amazingly quick for large data sets,  Chris  Memory: GC= mem incr=
+Time: 4462.9192 ns  Title: scan, Chris  Memory: GC= mem incr=
+Time: 6220.8223 ns  Title: Chris - Using 'group by and collect' from the next benchmark  Memory: GC= mem incr=
+Time: 6548.0614 ns  Title: Carlos Collect solution  Memory: GC= mem incr=
+Time: 6689.4197 ns  Title: Chris Regex in split based solution  Memory: GC= mem incr=
+Time: 7362.9427 ns  Title: Chris each solution  Memory: GC= mem incr=
+Time: 7494.1206 ns  Title: Chris Regex based solution  Memory: GC= mem incr=
+Time: 7573.4615 ns  Title: scan with block, Chris  Memory: GC= mem incr=
+Time: 7916.1406 ns  Title: Carlos find_all solution  Memory: GC= mem incr=
+Time: 10608.3822 ns  Title: Chris each solution with items - text loop  Memory: GC= mem incr=
+Time: 10892.3578 ns  Title: Hector inject solution  Memory: GC= mem incr=
+Time: 15249.4001 ns  Title: Chris each solution with text - items loop  Memory: GC= mem incr=
+Time: 31503.8013 ns  Title: GSUB replace, quite slow,  Chris  Memory: GC= mem incr=
+Time: 280110.8027 ns  Title: I don't know ruby, just C, the WTF, I am WTF programmer and try it the stupid way, Chris  Memory: GC= mem incr=
+****************************************************************************************************
+ Start Benchmarking without GC
+ Finished Benchmarks... 100 % Showing results from best to worst
+
+ Expected result: 5000
+
+Time: 2668.3426 ns  Title: inverse GSUB replace, amazingly quick for large data sets,  Chris  Memory: GC= mem incr=
+Time: 4521.8563 ns  Title: scan, Chris  Memory: GC= mem incr=
+Time: 5216.6414 ns  Title: Chris - Using 'group by and collect' from the next benchmark  Memory: GC= mem incr=
+Time: 5883.9417 ns  Title: Carlos Collect solution  Memory: GC= mem incr=
+Time: 6697.0158 ns  Title: Chris Regex in split based solution  Memory: GC= mem incr=
+Time: 6784.1196 ns  Title: Chris each solution  Memory: GC= mem incr=
+Time: 6905.9181 ns  Title: Carlos find_all solution  Memory: GC= mem incr=
+Time: 7459.6214 ns  Title: scan with block, Chris  Memory: GC= mem incr=
+Time: 7822.7234 ns  Title: Chris Regex based solution  Memory: GC= mem incr=
+Time: 10055.3226 ns  Title: Hector inject solution  Memory: GC= mem incr=
+Time: 10086.9417 ns  Title: Chris each solution with items - text loop  Memory: GC= mem incr=
+Time: 14510.8414 ns  Title: Chris each solution with text - items loop  Memory: GC= mem incr=
+Time: 32178.2970 ns  Title: GSUB replace, quite slow,  Chris  Memory: GC= mem incr=
+Time: 222841.2437 ns  Title: I don't know ruby, just C, the WTF, I am WTF programmer and try it the stupid way, Chris  Memory: GC= mem incr=
+-----------------------------------------------------------
+Try the same with even more text
+-----------------------------------------------------------
+****************************************************************************************************
+ Start Benchmarking with GC
+ Finished Benchmarks... 100 % Showing results from best to worst
+
+ Expected result: 50000
+
+Time: 24638.4144 ns  Title: inverse GSUB replace, amazingly quick for large data sets,  Chris  Memory: GC= mem incr=
+Time: 47846.0312 ns  Title: scan, Chris  Memory: GC= mem incr=
+Time: 71936.3689 ns  Title: Chris Regex in split based solution  Memory: GC= mem incr=
+Time: 75525.3792 ns  Title: Chris - Using 'group by and collect' from the next benchmark  Memory: GC= mem incr=
+Time: 76280.4031 ns  Title: Chris Regex based solution  Memory: GC= mem incr=
+Time: 77216.4345 ns  Title: scan with block, Chris  Memory: GC= mem incr=
+Time: 85038.3759 ns  Title: Chris each solution  Memory: GC= mem incr=
+Time: 91108.4175 ns  Title: Carlos find_all solution  Memory: GC= mem incr=
+Time: 93279.9816 ns  Title: Carlos Collect solution  Memory: GC= mem incr=
+Time: 115244.6270 ns  Title: Chris each solution with items - text loop  Memory: GC= mem incr=
+Time: 117530.5843 ns  Title: Hector inject solution  Memory: GC= mem incr=
+Time: 163083.6010 ns  Title: Chris each solution with text - items loop  Memory: GC= mem incr=
+Time: 320804.0237 ns  Title: GSUB replace, quite slow,  Chris  Memory: GC= mem incr=
+Time: 3088877.2011 ns  Title: I don't know ruby, just C, the WTF, I am WTF programmer and try it the stupid way, Chris  Memory: GC= mem incr=
+****************************************************************************************************
+ Start Benchmarking without GC
+ Finished Benchmarks... 100 % Showing results from best to worst
+
+ Expected result: 50000
+
+Time: 25192.7853 ns  Title: inverse GSUB replace, amazingly quick for large data sets,  Chris  Memory: GC= mem incr=
+Time: 45346.5939 ns  Title: scan, Chris  Memory: GC= mem incr=
+Time: 48664.8083 ns  Title: Chris - Using 'group by and collect' from the next benchmark  Memory: GC= mem incr=
+Time: 63216.7816 ns  Title: Carlos Collect solution  Memory: GC= mem incr=
+Time: 64282.4173 ns  Title: Chris each solution  Memory: GC= mem incr=
+Time: 71420.1927 ns  Title: Chris Regex in split based solution  Memory: GC= mem incr=
+Time: 76643.1808 ns  Title: Chris Regex based solution  Memory: GC= mem incr=
+Time: 77800.6077 ns  Title: Carlos find_all solution  Memory: GC= mem incr=
+Time: 78628.3970 ns  Title: scan with block, Chris  Memory: GC= mem incr=
+Time: 101267.6239 ns  Title: Hector inject solution  Memory: GC= mem incr=
+Time: 101524.4007 ns  Title: Chris each solution with items - text loop  Memory: GC= mem incr=
+Time: 147026.5865 ns  Title: Chris each solution with text - items loop  Memory: GC= mem incr=
+Time: 328073.9784 ns  Title: GSUB replace, quite slow,  Chris  Memory: GC= mem incr=
+Time: 2308266.4013 ns  Title: I don't know ruby, just C, the WTF, I am WTF programmer and try it the stupid way, Chris  Memory: GC= mem incr=
+-----------------------------------------------------------
+Keeping a count of the appearances of each word in the text
+-----------------------------------------------------------
+****************************************************************************************************
+ Start Benchmarking with GC
+ Finished Benchmarks... 100 % Showing results from best to worst
+
+ Expected result: {"cads"=>1, "chris"=>2, "test"=>1, "ojete"=>2, "1"=>1, "carlos"=>2, "hector"=>1, "moreno"=>1}
+
+Time: 14.4126 ns  Title: has_key with each, Chris's solution, init hash with {}  Memory: GC= mem incr=
+Time: 14.5988 ns  Title: has_key with each, Chris's solution, init hash with Hash.new  Memory: GC= mem incr=
+Time: 21.1889 ns  Title: Using inject Carlos solution  Memory: GC= mem incr=
+Time: 24.6720 ns  Title: Using inject Chris solution using boolean || instead of .has_key?  Memory: GC= mem incr=
+Time: 29.0570 ns  Title: Using group by and collect  Memory: GC= mem incr=
+****************************************************************************************************
+ Start Benchmarking without GC
+ Finished Benchmarks... 100 % Showing results from best to worst
+
+ Expected result: {"cads"=>1, "chris"=>2, "test"=>1, "ojete"=>2, "1"=>1, "carlos"=>2, "hector"=>1, "moreno"=>1}
+
+Time: 12.1893 ns  Title: has_key with each, Chris's solution, init hash with {}  Memory: GC= mem incr=
+Time: 12.6062 ns  Title: has_key with each, Chris's solution, init hash with Hash.new  Memory: GC= mem incr=
+Time: 15.8088 ns  Title: Using inject Carlos solution  Memory: GC= mem incr=
+Time: 19.2348 ns  Title: Using inject Chris solution using boolean || instead of .has_key?  Memory: GC= mem incr=
+Time: 19.5115 ns  Title: Using group by and collect  Memory: GC= mem incr=
+-----------------------------------------------------------
+Try the same with more text
+-----------------------------------------------------------
+****************************************************************************************************
+ Start Benchmarking with GC
+ Finished Benchmarks... 100 % Showing results from best to worst
+
+ Expected result: {"cads"=>1000, "chris"=>2000, "test"=>1000, "ojete"=>2000, "1"=>1000, "carlos"=>2000, "hector"=>1000, "moreno"=>1000}
+
+Time: 7221.8609 ns  Title: Using group by and collect  Memory: GC= mem incr=
+Time: 9949.2788 ns  Title: has_key with each, Chris's solution, init hash with {}  Memory: GC= mem incr=
+Time: 10013.1559 ns  Title: has_key with each, Chris's solution, init hash with Hash.new  Memory: GC= mem incr=
+Time: 14078.5980 ns  Title: Using inject Chris solution using boolean || instead of .has_key?  Memory: GC= mem incr=
+Time: 14801.5833 ns  Title: Using inject Carlos solution  Memory: GC= mem incr=
+****************************************************************************************************
+ Start Benchmarking without GC
+ Finished Benchmarks... 100 % Showing results from best to worst
+
+ Expected result: {"cads"=>1000, "chris"=>2000, "test"=>1000, "ojete"=>2000, "1"=>1000, "carlos"=>2000, "hector"=>1000, "moreno"=>1000}
+
+Time: 4516.3965 ns  Title: Using group by and collect  Memory: GC= mem incr=
+Time: 8314.8193 ns  Title: has_key with each, Chris's solution, init hash with {}  Memory: GC= mem incr=
+Time: 8516.2592 ns  Title: has_key with each, Chris's solution, init hash with Hash.new  Memory: GC= mem incr=
+Time: 12579.5221 ns  Title: Using inject Chris solution using boolean || instead of .has_key?  Memory: GC= mem incr=
+Time: 12590.0793 ns  Title: Using inject Carlos solution  Memory: GC= mem incr=
+-----------------------------------------------------------
+Try the same with even more text
+-----------------------------------------------------------
+****************************************************************************************************
+ Start Benchmarking with GC
+ Finished Benchmarks... 100 % Showing results from best to worst
+
+ Expected result: {"cads"=>10000, "chris"=>20000, "test"=>10000, "ojete"=>20000, "1"=>10000, "carlos"=>20000, "hector"=>10000, "moreno"=>10000}
+
+Time: 74571.0373 ns  Title: Using group by and collect  Memory: GC= mem incr=
+Time: 98151.7792 ns  Title: has_key with each, Chris's solution, init hash with Hash.new  Memory: GC= mem incr=
+Time: 100356.5788 ns  Title: has_key with each, Chris's solution, init hash with {}  Memory: GC= mem incr=
+Time: 144158.5541 ns  Title: Using inject Chris solution using boolean || instead of .has_key?  Memory: GC= mem incr=
+Time: 144285.9650 ns  Title: Using inject Carlos solution  Memory: GC= mem incr=
+****************************************************************************************************
+ Start Benchmarking without GC
+ Finished Benchmarks... 100 % Showing results from best to worst
+
+ Expected result: {"cads"=>10000, "chris"=>20000, "test"=>10000, "ojete"=>20000, "1"=>10000, "carlos"=>20000, "hector"=>10000, "moreno"=>10000}
+
+Time: 47182.3692 ns  Title: Using group by and collect  Memory: GC= mem incr=
+Time: 83215.8089 ns  Title: has_key with each, Chris's solution, init hash with {}  Memory: GC= mem incr=
+Time: 86475.2293 ns  Title: has_key with each, Chris's solution, init hash with Hash.new  Memory: GC= mem incr=
+Time: 123361.5875 ns  Title: Using inject Carlos solution  Memory: GC= mem incr=
+Time: 124203.2051 ns  Title: Using inject Chris solution using boolean || instead of .has_key?  Memory: GC= mem incr=
+chris@fruwe~/src/me/CactusZen 

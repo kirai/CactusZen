@@ -24,7 +24,7 @@ def print_result gc, text, expected_result
     GC.start
     GC.disable unless gc
     
-    mem = GC.stat
+    mem = (GC.respond_to?(:stat) ? GC.stat : {})
 
     time = Benchmark.realtime do 
       amount.times do 
@@ -45,7 +45,7 @@ def print_result gc, text, expected_result
       end
     end
 
-    mem = Hash[GC.stat.collect{|key,value| [key, value - mem[key]]}]
+    mem = Hash[(GC.respond_to?(:stat) ? GC.stat : {}).collect{|key,value| [key, value - mem[key]]}]
 
     GC.enable
 
@@ -58,7 +58,7 @@ def print_result gc, text, expected_result
   puts
   
   results.sort{|x,y|x[1][:time] <=> y[1][:time]}.each do |title, result|
-    puts "Time: #{format("%.4f", result[:time] * 1_000_000.0 / amount)} ns  Title: #{title}  Memory: #{result[:mem]}"
+    puts "Time: #{format("%.4f", result[:time] * 1_000_000.0 / amount)} ns  Title: #{title}  Memory: GC=#{result[:mem][:gc_count]} mem incr=#{result[:mem][:mem_incr]}"
   end
 end
 
