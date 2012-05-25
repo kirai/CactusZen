@@ -17,6 +17,17 @@ bench "Carlos Collect solution" do |text| text.split(' ').collect{|word| 1 if it
 
 bench "Hector inject solution" do |text| text.split(' ').inject(0) { |sum, word| items.include?(word) ? sum + 1 : sum  } end
 
+bench "Hector OR based solution" do |text| text.split.each_slice(items.count).inject(0){ |s,x| s += items.count + x.count - ( items | x ).count } end
+
+bench "Hector each slice collect" do |text| 
+  results = text.split.each_slice(items.count).collect{|threewords| (threewords & items).count} 
+  sum = 0
+  results.each { |a| sum+=a } #Is there a faster way to do this?
+  sum
+end
+
+bench "Hector each_slice and inject solution" do |text| text.split.each_slice(3).inject(0){|sum, x| sum+=(x & items).count} end
+
 bench "Carlos find_all solution" do |text| text.split(' ').find_all{|word| items.include?(word)}.count end
 
 bench "Chris each solution" do |text| sum = 0; text.split.each{|word| sum += 1 if items.include?(word)}; sum end
