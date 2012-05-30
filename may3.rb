@@ -4,7 +4,7 @@ load 'prof.rb'
 items = ["carlos", "moreno", "ojete"]
 
 puts "--------------------------------------------------------------------"
-puts "Counting each time a word from items appears at text (the total sum)"
+puts "Counting each time a word from items appears at text (the total sum)hello"
 puts "--------------------------------------------------------------------"
 
 # bench "Baseline" do |text| 5; end
