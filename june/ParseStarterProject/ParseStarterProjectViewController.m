@@ -9,6 +9,10 @@
 @synthesize label1;
 @synthesize textField1;
 
+@synthesize storeButton;
+@synthesize titleText;
+@synthesize descriptionText;
+
 - (void)dealloc
 {
     [super dealloc];
@@ -34,21 +38,29 @@
 
 -(IBAction)fetchData:(id)sender 
 {
-
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-//    [testObject setObject:@"ojete" forKey:@"foo"];
-//    [testObject setObject:@"red" forKey:@"color"];
-//    [testObject setObject:@"little" forKey:@"shit"];
-//    [testObject save];
-//    [testObject setObject:@"big" forKey:@"shit"];
-//    [testObject save];
-    
     NSString *parseObjectId = [[NSString alloc] init];
     parseObjectId = textField1.text;
     PFQuery *query = [PFQuery queryWithClassName:@"TestObject"];
     PFObject *parseObject = [query getObjectWithId:parseObjectId];
-    NSString *color = [parseObject objectForKey:@"color"];
-    label1.text = color;
+    NSString *title = [parseObject objectForKey:@"title"];
+    NSString *description = [parseObject objectForKey:@"description"];
+    NSString *result = [title stringByAppendingString:description];
+
+    label1.text = result;
+}
+
+-(IBAction)storeData:(id)sender 
+{
+    NSString *title = [[NSString alloc] init];
+    NSString *description = [[NSString alloc] init];
+
+    title = titleText.text;
+    description = descriptionText.text;
+    
+    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    [testObject setObject:title forKey:@"title"];
+    [testObject setObject:description forKey:@"description"];
+    [testObject save];
 }
 
 - (void)viewDidUnload
