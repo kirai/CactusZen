@@ -21,10 +21,20 @@
     // [PFFacebookUtils initializeWithApplicationId:@"your_facebook_app_id"];
     // ****************************************************************************
     
-    [Parse setApplicationId:@"t9DSb8l89XmunGdVHHvkyCMVfArrRcfD6OBQkuSc" 
-           clientKey:@"PTQUj5OETcy02zQYQIYPXwfdN57lFmYBfvVaGNYT"];
-
+    Boolean isHectorsLaptop = FALSE;
     
+    isHectorsLaptop = [[NSFileManager defaultManager] fileExistsAtPath:@"june/ThisWillWork.xcodeproj/project.xcworkspace/xcuserdata/hector-garcia.xcuserdatad/UserInterfaceState.xcuserstate"];
+    
+    if (isHectorsLaptop) {
+        // Hector Parse application id and client id
+        [Parse setApplicationId:@"iKSRCy0x6WmlHjjEWDEFZjmVwsn0kNIUloTdgR0F" 
+                      clientKey:@"ahNMcXX3yxmisTnGKYJDMfLM8CPRVeuau8jrPYOr"];
+    }else{
+        // Carlos Parse application id and client id
+        [Parse setApplicationId:@"t9DSb8l89XmunGdVHHvkyCMVfArrRcfD6OBQkuSc" 
+                      clientKey:@"PTQUj5OETcy02zQYQIYPXwfdN57lFmYBfvVaGNYT"];
+    }
+
     [PFUser enableAutomaticUser];
     PFACL *defaultACL = [PFACL ACL];
     // Optionally enable public read access by default.
