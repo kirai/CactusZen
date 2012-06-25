@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface SecondViewController : UIViewController{
+    IBOutlet UITextField *chatField;
+    IBOutlet UIButton *trollButton;
+    IBOutlet UITextView *chatView;
+}
+@property (nonatomic, retain) UITextField *chatField;
+@property (nonatomic, retain) UIButton *trollButton;
+@property (nonatomic, retain) UITextView *chatView;
+
+- (IBAction)trollButtom:(id)sender;
+
 
 @end

@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072FC7C71598936500C3CB04 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072FC7C61598936500C3CB04 /* Parse.framework */; };
+		072FC7CA159894A600C3CB04 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072FC7C9159894A600C3CB04 /* AudioToolbox.framework */; };
+		072FC7CC159894AE00C3CB04 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072FC7CB159894AE00C3CB04 /* CFNetwork.framework */; };
+		072FC7CE159894BE00C3CB04 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072FC7CD159894BE00C3CB04 /* SystemConfiguration.framework */; };
+		072FC7D0159894C800C3CB04 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072FC7CF159894C800C3CB04 /* MobileCoreServices.framework */; };
+		072FC7D41598950200C3CB04 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 072FC7D31598950200C3CB04 /* libz.dylib */; };
+		072FC7D61598950D00C3CB04 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072FC7D51598950D00C3CB04 /* Security.framework */; };
+		072FC7D81598952000C3CB04 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072FC7D71598952000C3CB04 /* QuartzCore.framework */; };
 		075AB4D615860FB80037751D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075AB4D515860FB80037751D /* UIKit.framework */; };
 		075AB4D815860FB80037751D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075AB4D715860FB80037751D /* Foundation.framework */; };
 		075AB4DA15860FB80037751D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075AB4D915860FB80037751D /* CoreGraphics.framework */; };
@@ -26,6 +34,8 @@
 		075AB50415860FB80037751D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075AB4D715860FB80037751D /* Foundation.framework */; };
 		075AB50C15860FB80037751D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 075AB50A15860FB80037751D /* InfoPlist.strings */; };
 		075AB50F15860FB80037751D /* trollChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 075AB50E15860FB80037751D /* trollChatTests.m */; };
+		075AB51D1586178C0037751D /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075AB51C1586178C0037751D /* AddressBookUI.framework */; };
+		075AB51F15861DFE0037751D /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075AB51E15861DFE0037751D /* AddressBook.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,32 +49,43 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		072FC7C61598936500C3CB04 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		072FC7C9159894A600C3CB04 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		072FC7CB159894AE00C3CB04 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		072FC7CD159894BE00C3CB04 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		072FC7CF159894C800C3CB04 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		072FC7D1159894E500C3CB04 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		072FC7D31598950200C3CB04 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		072FC7D51598950D00C3CB04 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		072FC7D71598952000C3CB04 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		075AB4D115860FB80037751D /* trollChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trollChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		075AB4D515860FB80037751D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		075AB4D715860FB80037751D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		075AB4D915860FB80037751D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		075AB4DD15860FB80037751D /* trollChat-Info.plist */ = {isa = PBXFileReference; path = "trollChat-Info.plist"; sourceTree = "<group>"; };
+		075AB4DD15860FB80037751D /* trollChat-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "trollChat-Info.plist"; sourceTree = "<group>"; };
 		075AB4DF15860FB80037751D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		075AB4E115860FB80037751D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		075AB4E315860FB80037751D /* trollChat-Prefix.pch */ = {isa = PBXFileReference; path = "trollChat-Prefix.pch"; sourceTree = "<group>"; };
-		075AB4E415860FB80037751D /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		075AB4E315860FB80037751D /* trollChat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "trollChat-Prefix.pch"; sourceTree = "<group>"; };
+		075AB4E415860FB80037751D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		075AB4E515860FB80037751D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		075AB4E815860FB80037751D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		075AB4EB15860FB80037751D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		075AB4ED15860FB80037751D /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
+		075AB4ED15860FB80037751D /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		075AB4EE15860FB80037751D /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		075AB4F015860FB80037751D /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		075AB4F215860FB80037751D /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		075AB4F415860FB80037751D /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
+		075AB4F415860FB80037751D /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		075AB4F515860FB80037751D /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		075AB4F715860FB80037751D /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		075AB4F915860FB80037751D /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		075AB50015860FB80037751D /* trollChatTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = trollChatTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		075AB50115860FB80037751D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		075AB50915860FB80037751D /* trollChatTests-Info.plist */ = {isa = PBXFileReference; path = "trollChatTests-Info.plist"; sourceTree = "<group>"; };
+		075AB50915860FB80037751D /* trollChatTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "trollChatTests-Info.plist"; sourceTree = "<group>"; };
 		075AB50B15860FB80037751D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		075AB50D15860FB80037751D /* trollChatTests.h */ = {isa = PBXFileReference; path = trollChatTests.h; sourceTree = "<group>"; };
+		075AB50D15860FB80037751D /* trollChatTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = trollChatTests.h; sourceTree = "<group>"; };
 		075AB50E15860FB80037751D /* trollChatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = trollChatTests.m; sourceTree = "<group>"; };
+		075AB51C1586178C0037751D /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		075AB51E15861DFE0037751D /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +93,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				072FC7D81598952000C3CB04 /* QuartzCore.framework in Frameworks */,
+				072FC7D61598950D00C3CB04 /* Security.framework in Frameworks */,
+				072FC7D41598950200C3CB04 /* libz.dylib in Frameworks */,
+				075AB4DA15860FB80037751D /* CoreGraphics.framework in Frameworks */,
+				072FC7D0159894C800C3CB04 /* MobileCoreServices.framework in Frameworks */,
+				072FC7CE159894BE00C3CB04 /* SystemConfiguration.framework in Frameworks */,
+				072FC7CC159894AE00C3CB04 /* CFNetwork.framework in Frameworks */,
+				072FC7CA159894A600C3CB04 /* AudioToolbox.framework in Frameworks */,
+				075AB51F15861DFE0037751D /* AddressBook.framework in Frameworks */,
+				075AB51D1586178C0037751D /* AddressBookUI.framework in Frameworks */,
 				075AB4D615860FB80037751D /* UIKit.framework in Frameworks */,
 				075AB4D815860FB80037751D /* Foundation.framework in Frameworks */,
-				075AB4DA15860FB80037751D /* CoreGraphics.framework in Frameworks */,
+				072FC7C71598936500C3CB04 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +125,16 @@
 		075AB4C615860FB80037751D = {
 			isa = PBXGroup;
 			children = (
+				072FC7D71598952000C3CB04 /* QuartzCore.framework */,
+				072FC7D51598950D00C3CB04 /* Security.framework */,
+				072FC7D31598950200C3CB04 /* libz.dylib */,
+				072FC7D1159894E500C3CB04 /* libz.1.1.3.dylib */,
+				072FC7CF159894C800C3CB04 /* MobileCoreServices.framework */,
+				072FC7CD159894BE00C3CB04 /* SystemConfiguration.framework */,
+				072FC7CB159894AE00C3CB04 /* CFNetwork.framework */,
+				072FC7C9159894A600C3CB04 /* AudioToolbox.framework */,
+				075AB51E15861DFE0037751D /* AddressBook.framework */,
+				075AB51C1586178C0037751D /* AddressBookUI.framework */,
 				075AB4DB15860FB80037751D /* trollChat */,
 				075AB50715860FB80037751D /* trollChatTests */,
 				075AB4D415860FB80037751D /* Frameworks */,
@@ -113,6 +154,7 @@
 		075AB4D415860FB80037751D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				072FC7C61598936500C3CB04 /* Parse.framework */,
 				075AB4D515860FB80037751D /* UIKit.framework */,
 				075AB4D715860FB80037751D /* Foundation.framework */,
 				075AB4D915860FB80037751D /* CoreGraphics.framework */,
@@ -393,6 +435,10 @@
 		075AB51315860FB80037751D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "trollChat/trollChat-Prefix.pch";
 				INFOPLIST_FILE = "trollChat/trollChat-Info.plist";
@@ -404,6 +450,10 @@
 		075AB51415860FB80037751D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "trollChat/trollChat-Prefix.pch";
 				INFOPLIST_FILE = "trollChat/trollChat-Info.plist";
@@ -465,6 +515,7 @@
 				075AB51415860FB80037751D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		075AB51515860FB80037751D /* Build configuration list for PBXNativeTarget "trollChatTests" */ = {
 			isa = XCConfigurationList;
@@ -473,6 +524,7 @@
 				075AB51715860FB80037751D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

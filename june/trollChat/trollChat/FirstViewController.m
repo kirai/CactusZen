@@ -22,6 +22,47 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+
+    ABAddressBookRef book = ABAddressBookCreate();
+	
+    // Count of Addressbook
+    //CFIndex cnt = ABAddressBookGetPersonCount(book);	
+	
+    //AllRecords of Addressbook
+    CFArrayRef records = ABAddressBookCopyArrayOfAllPeople(book);
+    for (int i = 0; i < CFArrayGetCount(records); i++) {
+        ABRecordRef person = CFArrayGetValueAtIndex(records, i);	
+		
+        CFDateRef cfdate = ABRecordCopyValue(person, kABPersonModificationDateProperty);
+        
+        // 名前関係	
+          NSString *firstName = (__bridge NSString *)ABRecordCopyValue(person, kABPersonFirstNameProperty);
+        NSString *lastName = (__bridge NSString *)ABRecordCopyValue(person, kABPersonLastNameProperty);
+        NSString *name = [NSString stringWithFormat:@"%@", firstName];
+
+        // メモ		
+        NSString *memo = (__bridge NSString *)ABRecordCopyValue(person, kABPersonNoteProperty);
+		
+        NSString *tel1, *tel2;
+        // 電話番号
+        ABMultiValueRef tels = ABRecordCopyValue(person, kABPersonPhoneProperty);
+        if (ABMultiValueGetCount(tels) > 0) {
+            tel1 = (__bridge NSString *)ABMultiValueCopyValueAtIndex(tels, 0);
+            // Tel2
+            if (ABMultiValueGetCount(tels) > 1) {
+                tel2 = (__bridge NSString *)ABMultiValueCopyValueAtIndex(tels, 1);
+            }
+        }
+		
+        // E-mail
+        ABMultiValueRef emails = ABRecordCopyValue(person, kABPersonEmailProperty);
+        NSString *email;
+        if (ABMultiValueGetCount(emails) > 0) {
+            email = (__bridge NSString *)ABMultiValueCopyValueAtIndex(emails, 0);
+        }
+        
+        [UIAppDelegate.addressBook addObject:name];
+    }
 }
 
 - (void)viewDidUnload
@@ -59,6 +100,32 @@
     } else {
         return YES;
     }
+}
+
+#pragma mark - Table View
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [UIAppDelegate.addressBook count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    if (cell == nil){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    }
+
+    NSString *name = [UIAppDelegate.addressBook objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = name;
+    
+    return cell;
 }
 
 @end

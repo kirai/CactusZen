@@ -6,8 +6,10 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
+#import "AppDelegate.h"
 #import <UIKit/UIKit.h>
+#import <AddressBook/AddressBook.h>
 
-@interface FirstViewController : UIViewController
+@interface FirstViewController : UITableViewController
 
 @end

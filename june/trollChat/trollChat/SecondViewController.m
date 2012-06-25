@@ -7,8 +7,14 @@
 //
 
 #import "SecondViewController.h"
+#import "Parse/Parse.h"
 
 @implementation SecondViewController
+
+@synthesize chatField;
+@synthesize trollButton;
+@synthesize chatView;
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -21,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(someTimer) userInfo:nil repeats:YES];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -61,4 +68,35 @@
     }
 }
 
+- (IBAction)trollButtom:(id)sender {
+    NSString *message = [[NSString alloc] init];
+    
+    message = chatField.text;
+    NSLog(@"%@", chatView.text);    
+    
+    
+    PFObject *testObject = [PFObject objectWithClassName:@"chat"];
+    [testObject setObject:message forKey:@"troll"];
+    [testObject save];
+    
+
+
+}
+
+- (void)someTimer
+{
+    NSLog(@"Hi");
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"chat"];
+    //    PFObject *gameScore = [query getObjectWithId:@"RM0yqE3eS0"];
+    //    NSLog(@"%@", [gameScore objectForKey:@"troll"]);
+    
+    NSArray *objects = [query findObjects];
+    chatView.text = @"";
+    [objects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        //        NSString *chat = [gameScore objectForKey:@"troll"];        
+        chatView.text = [NSString stringWithFormat:@"%@\n%@", chatView.text, [obj objectForKey:@"troll"]];
+        
+    }];
+}
 @end

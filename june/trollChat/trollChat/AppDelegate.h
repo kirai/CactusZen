@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate> {
+    NSMutableArray *_addressBook;
+}
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) NSMutableArray *addressBook;
+
+#define UIAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
 @end

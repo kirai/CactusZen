@@ -7,14 +7,29 @@
 //
 
 #import "AppDelegate.h"
+#import "Parse/Parse.h"
+
 
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize addressBook = _addressBook;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [PFUser enableAutomaticUser];
+    PFACL *defaultACL = [PFACL ACL];
+    // Optionally enable public read access by default.
+    [defaultACL setPublicReadAccess:YES];
+    //[PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
+    
+    [Parse setApplicationId:@"eeLc63BAcwBvMnzAkee6V3WcqOYaUxGbfV5XZvED"
+                  clientKey:@"vPd6mORNCFsyFxEa8cGv4zqPQzCBmUXy6zSxnte6"];
+    
+    
+    
+    _addressBook = [[NSMutableArray alloc] init ];
     return YES;
 }
 							
