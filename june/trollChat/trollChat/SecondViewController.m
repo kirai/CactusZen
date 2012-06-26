@@ -15,7 +15,6 @@
 @synthesize trollButton;
 @synthesize chatView;
 
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -74,13 +73,14 @@
     message = chatField.text;
     NSLog(@"%@", chatView.text);    
     
+    [self sendChatMessage:message];
+}
+
+- (void)sendChatMessage:(NSString *) message {
     
     PFObject *testObject = [PFObject objectWithClassName:@"chat"];
     [testObject setObject:message forKey:@"troll"];
     [testObject save];
-    
-
-
 }
 
 - (void)someTimer

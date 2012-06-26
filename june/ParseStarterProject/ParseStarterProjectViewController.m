@@ -62,6 +62,17 @@
     [testObject setObject:description forKey:@"description"];
     [testObject save];
 }
+/*
+-(IBAction)getdata:(id)sender
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"Like"];
+    //[query whereKey:@"user" equalTo:currentUser];
+    [query whereKey:@"title" equalTo:@"hello"];
+
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        data = [[NSMutableArray alloc] initWithArray:objects];
+    }
+}*/
 
 - (void)viewDidUnload
 {
